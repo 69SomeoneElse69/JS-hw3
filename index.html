@@ -10,18 +10,51 @@
 <body>
     <script>
         // 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+        let i = 0;
+        function isPrime(number) {
+            let start = 2;
+            const limit = Math.sqrt(number);
+            while (start <= limit) {
+                if (number % start++ < 1) return false;
+            }
+            return number > 1;
+        }
+        document.writeln("С помощью цикла while вывести все простые числа в промежутке от 0 до 100.<br/>");
+        while (i < 101) {
+            if (i > 1 && isPrime(i)) {
+                document.writeln(i);
+                i++;
+            } else {
+                i++;
+            }
+
+        }
     </script>
 
     <script>
         /*2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
           3. Товары в корзине хранятся в массиве. Задачи:
         a) Организовать такой массив для хранения товаров в корзине;*/
+
+        var box = [['item1', 100, 5], ['item2', 100, 7], ['item3', 100, 1], ['item4', 100, 9]];
+        document.write(`<br/><br/>Организовать такой массив для хранения товаров в корзине:<br/> ${box}`)
+
         //b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+        function totalCount(box) {
+            return box.reduce((price, item) => price + item[1] * item[2], 0);
+        }
+        document.writeln("<br/><br/>Организовать функцию countBasketPrice, которая будет считать стоимость корзины");
+        document.write(`<br/><br/>обьем содержимого коробки: ${totalCount(box)}`)
     </script>
 
     <script>
         /*4. * Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.Выглядеть это должно так:
         for (…) {// здесь пусто}*/
+        document.writeln("<br/><br/>Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.Выглядеть это должно так:\
+        for (…) {// здесь пусто}<br/>");
+        for (i = 0; document.writeln(i), i++ < 9;) {
+
+        }
     </script>
 
     <script>
